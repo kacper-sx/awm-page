@@ -2,14 +2,30 @@
 import Image from 'astro/components/Image.astro'
 import awm from '@/assets/awm.avif'
 import background from '@/assets/background.svg'
+import { Icon } from 'astro-icon/components'
 ---
 
 <sections
   style={`background-image: url(${background.src})`}
-  class='flex flex-col gap-8 bg-cover lg:bg-center lg:gap-12 px-spaced min-h-screen justify-center items-center overflow-hidden text-center pt-28'
+  class='flex flex-col relative gap-8 bg-cover lg:bg-center lg:gap-12 px-spaced min-h-screen justify-center items-center overflow-hidden text-center pt-16 lg:pt-30'
 >
+  <div
+    id='ellipse'
+    class='absolute w-full h-2/4 bottom-1/4 right-0 -z-0 rotate-12'
+  >
+  </div>
+  <a
+    target='_blank'
+    rel='noopener'
+    href='https://www.instagram.com/_a.w.m._a.w.f_/'
+  >
+    <Icon
+      name='sociale'
+      class={'absolute hidden lg:block top-36 left-24 size-48 transition-all hover:scale-110 duration-500 animate-spin-slow'}
+    />
+  </a>
   <figure
-    class='flex items-center justify-center w-full text-2xl font-semibold xl:text-4xl'
+    class='flex items-center justify-center w-full text-3xl font-semibold xl:text-4xl'
   >
     <span>Akademia Wychowania Muzycznego</span>
     <span>Akademia Wychowania Muzycznego</span>
@@ -51,23 +67,31 @@ import background from '@/assets/background.svg'
     </div>
   </div> -->
   <div
-    class='flex gap-4 md:gap-8 items-center justify-center text-base md:text-lg mt-18 md:mt-12 w-full font-semibold'
+    class='flex flex-col md:flex-row gap-4 md:gap-8 items-center justify-center text-base md:text-lg mt-14 md:mt-12 w-full font-semibold'
   >
     <a
-      class='rounded-full hover:ring-2 ring-offset-4 btn btn-white btn-animate ring-bbrand-green transition-all bg-bbrand-green py-4 px-5'
-      href='/#wspolpraca'>Zatrudnij band</a
+      class='rounded-full flex gap-4 items-center hover:ring-2 ring-offset-4 btn btn-white btn-animate ring-bbrand-green transition-all bg-bbrand-green py-4 px-5'
+      href='/#wspolpraca'
+      >Zatrudnij band <Icon
+        name='lucide:guitar'
+        class={'flex size-6 text-bbrand-yellow'}
+      /></a
     >
     <a
-      class='rounded-full btn btn-white btn-animate hover:ring-2 ring-offset-4 ring-bbrand-green transition-all bg-bbrand-green py-4 px-5'
-      href='/kontakt'>Dołącz do bandu</a
-    >
+      class='rounded-full flex gap-4 items-center btn btn-white btn-animate hover:ring-2 ring-offset-4 ring-bbrand-green transition-all bg-bbrand-green py-4 px-5'
+      href='/kontakt'
+      >Dołącz do bandu <Icon
+        name='lucide:mic'
+        class={'flex size-6 text-bbrand-yellow'}
+      />
+    </a>
   </div>
   <Image
     src={awm}
     alt='Akademia Wychowania Muzycznego'
     loading={'eager'}
     fetchpriority={'high'}
-    class={'min-h-[35vh] max-h-[50vh] mt-6 object-cover object-[35%_65%] rounded-3xl max-w-7xl'}
+    class={'min-h-[35vh] max-h-[50vh] mt-4 object-cover object-[35%_65%] rounded-3xl xl:max-w-7xl z-10'}
     widths={[400, 600, 800, 1000, 1200, 1600, 2000]}
     sizes='(max-width: 400px) 400px, (max-width: 600px) 600px, (max-width: 800px) 800px, (max-width: 1000px) 1000px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (min-width: 1601px) 2000px'
   />
@@ -89,6 +113,20 @@ import background from '@/assets/background.svg'
 
   * {
     box-sizing: border-box;
+  }
+
+  #ellipse {
+    background: conic-gradient(
+      from 187.31deg at 53.06% 26.16%,
+      var(--color-bbrand-yellow) -20.13deg,
+
+      rgba(255, 33, 246, 0) 122.88deg,
+      rgba(125, 35, 240, 0) 273.47deg,
+      var(--color-bbrand-yellow) 229.87deg,
+      var(--color-bbrand-yellow) 375.67deg
+    );
+    filter: blur(80px);
+    transform: matrix(-1, 0, 0, 0, 0);
   }
 
   figure {
@@ -134,7 +172,7 @@ import background from '@/assets/background.svg'
       text-shadow: 0 0 30px var(--color-bbrand-green);
     }
     75% {
-      text-shadow: 0 0 30px var(--color-bbrand-blue);
+      text-shadow: 0 0 30px var(--color-bbrand-yellow);
     }
   }
 
@@ -270,7 +308,7 @@ import background from '@/assets/background.svg'
     text-transform: uppercase;
     text-decoration: none;
     padding: 15px 40px;
-    display: inline-block;
+    display: inline-flex;
     border-radius: 100px;
     transition: all 0.2s;
     position: relative;

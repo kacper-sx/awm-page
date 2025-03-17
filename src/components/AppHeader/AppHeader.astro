@@ -7,7 +7,7 @@ import logo from '@/assets/logo-header.avif'
 
 <header
   class:list={[
-    'flex w-full fixed left-0 z-99 top-0 px-spaced items-center h-24 gap-12',
+    'flex w-full fixed left-0 z-99 top-0 px-spaced items-center h-20 lg:h-22 gap-12',
     '[&>nav]:flex-1 [&>nav>ul]:flex [&>nav>ul]:items-center [&>nav>ul]:gap-16',
     '[&>nav.dn]:lg:block [&>nav.dn]:hidden backdrop-blur-md',
   ]}
@@ -30,7 +30,7 @@ import logo from '@/assets/logo-header.avif'
     </ul>
   </nav>
   <a href='/' class='text-center justify-center items-center px-3 py-1'>
-    <Image src={logo} alt='Logo' class='h-12 w-24 xl:h-20 xl:w-42' />
+    <Image src={logo} alt='Logo' class='h-12 w-24 xl:h-16 xl:w-36' />
   </a>
   <nav class='dn'>
     <ul>
