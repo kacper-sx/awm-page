@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@import "tailwindcss-intersect";
+
+@theme {
+ 
+  --color-bbrand-blue: oklch(90.54% 0.1545 194.77);
+  --color-bbrand-green: oklch(58.86% 0.1609 150.24);
+  --color-bbrand-yellow: oklch(95.15% 0.2067 109.46);
+  --color-bbrand-300: oklch(35.2% 0.2422 264.75);
+  --color-bbrand-400: oklch(48.73% 0.155 271.98);
+  --color-bbrand-500: oklch(36.8% 0.159 271.74);
+  --color-bbrand-600: oklch(33.69% 0.183 271.8);
+  --color-bbrand-700: oklch(29.4% 0.19 271.82);
+  --color-bbrand-800: oklch(24.94% 0.161 271.97);
+  --color-bbrand-900: oklch(21.04% 0.136 271.35);
+  --primary: 20 100% 50%;
+
+  --color-background: oklch(100% 0.0 0.0);
+  --color-foreground: oklch(0% 0 0);
+  --color-border: oklch(33.68% 0 0);
+  --color-accent: oklch(67.13% 0.1769 248.78);
+
+  --animate-fade-in-scale: fade-in-scale 0.7s ease-out;
+  --animate-fade-in-scale-index: fade-in-scale 1s ease-out;
+
+}
+
+@keyframes fade-in-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@utility mx-spaced {
+  @apply mx-4 md:mx-8 lg:mx-12;
+}
+
+
+@utility intersection {
+  @apply intersect:animate-fade-in-scale
+}
+
+@utility intersection-delay {
+  @apply intersect:animate-fade-in-scale delay-400;
+}
+
+@utility px-spaced {
+  @apply px-4 md:px-8 lg:px-12;
+}
+
+.double-brand-clip {
+  clip-path: polygon(18.5% 0, 100% 0, 100% 89%, 83.5% 100%, 0 100%, 0 12%);
+}
+
+@layer base {
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    display: flex;
+    flex-direction: column;
+    gap: calc(24px * 3);
+  }
+}
