@@ -1,0 +1,54 @@
+---
+import MainOffferCard from '@/components/features/MainOffferCard.astro'
+
+const MainOfferData = [
+  {
+    title: 'Koncerty na Robir',
+
+    description: 'Klimatyzacja split do mieszkania z montażem.',
+  },
+  {
+    title: 'Dyskoteki',
+
+    description: 'Pompy ciepła do grzania pomieszczeń i wody.',
+  },
+  {
+    title: 'Juwenalia',
+
+    description: 'Instalacje fotowoltaiczne dachowe i gruntowe.',
+  },
+  {
+    title: 'Otwarte próby',
+
+    description: 'Monitoring i telewizja przemysłowa z konfiguracją.',
+  },
+]
+---
+
+<section
+  id='offer'
+  class='flex relative flex-col gap-8 md:gap-16 xl:flex-row justify-center px-spaced'
+>
+  <div class='absolute w-full h-full top-0 left-0'>
+    {/* <YouTubeEmbed playlabel="About us" videoid="6VG8GOfN9-U"   /> */}
+    <iframe
+      src='https://www.youtube.com/embed/i0pz3hbV3Sg?autoplay=1&controls=0&mute=1&loop=1&playlist=i0pz3hbV3Sg'
+      class='w-full h-full -z-10'
+      title='Madame Chic video'
+      allow='accelerometer; autoplay;'></iframe>
+  </div>
+  <div
+    class='grid gap-10 *:flex *:flex-col *:gap-10 lg:grid-cols-2 intersect:animate-fade-in-scale intersect-once w-full'
+  >
+    <div>
+      {MainOfferData.slice(0, 2).map((offer) => <MainOffferCard {...offer} />)}
+    </div>
+    <div class='lg:mt-16'>
+      {MainOfferData.slice(2, 4).map((offer) => <MainOffferCard {...offer} />)}
+    </div>
+  </div>
+  <div
+    class='flex flex-col gap-4 order-first xl:order-last intersect:animate-fade-in-scale intersect-once items-center w-full justify-between'
+  >
+  </div>
+</section>
