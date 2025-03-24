@@ -1,0 +1,82 @@
+---
+import P1 from '@/assets/logo.avif'
+
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+
+const FooterContactData = [
+  {
+    icon: 'lucide:map-pin',
+    text: '34 Pułku Piechoty 2, Biała Podlaska',
+    link: 'https://maps.app.goo.gl/4qrrUjkWF5iQtwpR9',
+  },
+  {
+    icon: 'lucide:phone',
+    text: '+48 600 225 821',
+    link: 'tel:+48600225821',
+  },
+  {
+    icon: 'lucide:mail',
+    text: 'Igorkru@op.pl',
+    link: 'mailto:Igorkru@op.pl',
+  },
+]
+---
+
+<footer class='flex flex-col w-full px-spaced'>
+  <div
+    class:list={[
+      'flex flex-col gap-8 lg:items-center',
+      'flex lg:flex-row justify-between lg:*:flex-1',
+    ]}
+  >
+    <div class='flex flex-col gap-4 lg:gap-0 lg:justify-between'>
+      <div class='flex flex-col gap-8 w-full justify-center'>
+        <div class='flex flex-col gap-3'>
+          <p class={'text-primary !font-semibold !text-sm'}>Dane kontaktowe</p>
+          {
+            FooterContactData.map((link) => (
+              <a target='_blank' rel='noopener noreferrer' href={link.link}>
+                <div class='flex gap-2 items-center w-full'>
+                  <Icon name={link.icon} class={'size-6 text-primary'} />
+                  <span class={'text-primary'}>{link.text}</span>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+    <div class='flex items-center !flex-[3]'>
+      <Image src={P1} alt='AWM' class={'flex mx-auto max-w-xs'} />
+    </div>
+    <div class='flex flex-col items-end gap-2'>
+      <span class={'text-primary !font-bold !text-sm'}>Linki</span>
+      <a href='/aktualnosci' class='!px-0 !py-0'> Aktualności </a>
+      <a href='/muzycy' class='!px-0 !py-0'> Muzycy </a>
+      <a href='/historia' class='!px-0 !py-0'> Historia </a>
+      <a href='/kontakt' class='!px-0 !py-0'> Kontakt </a>
+    </div>
+  </div>
+  <div
+    class:list={[
+      'flex flex-col py-4 mt-8 lg:mt-0 flex-wrap gap-4',
+      'lg:grid lg:grid-cols-3 lg:justify-between',
+    ]}
+  >
+    <span class='text-inherit'>
+      AWM &copy; {new Date().getFullYear()}
+    </span>
+
+    <a class='lg:place-items-center grid' href='/sitemap-0.xml'>Mapa Witryny</a>
+    <div class='text-inherit opacity-100 flex items-center justify-end gap-1'>
+      <span class='opacity-80'>Realizacja -</span>
+      <a
+        class='font-medium font-display'
+        href='https://nfustudio.com/pl'
+        target='_blank'
+        rel='noopener noreferrer'>Kacper-sx</a
+      >
+    </div>
+  </div>
+</footer>

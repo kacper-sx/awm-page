@@ -1,0 +1,24 @@
+---
+export interface Props {
+  name: string
+  img: string
+  profile: string
+  role: string
+}
+
+const { name, img, profile, role } = Astro.props
+---
+
+<div
+  class='flex flex-col items-center min-h-[600px] lg:min-h-[900px] bg-cover w-full justify-end gap-4 p-8 lg:p-16 rounded-2xl'
+  style={`background-image: url('${img}');`}
+>
+  <div
+    class='flex flex-col gap-2 items-center bg-white/30 rounded-2xl p-4 w-full backdrop-blur-md border-2 border-bbrand-yellow'
+  >
+    <p class='text-base lg:text-xl font-extrabold uppercase'>{role}</p>
+    <h3 class='text-xl lg:text-4xl font-semibold text-bbrand-yellow'>{name}</h3>
+
+    <p class='text-base lg:text-xl text-center'>{profile}</p>
+  </div>
+</div>

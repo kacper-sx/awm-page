@@ -5,6 +5,8 @@ import react from '@astrojs/react';
 import icon from "astro-icon";
 import tailwindcss from '@tailwindcss/vite';
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://awm-awf.pl',
@@ -32,7 +34,7 @@ export default defineConfig({
           "cctv"
         ],
       },
-    }), react()],
+    }), react(), mdx()],
 
   vite: {
     plugins: [tailwindcss()]
