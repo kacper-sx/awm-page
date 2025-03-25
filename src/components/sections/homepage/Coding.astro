@@ -1,30 +1,30 @@
 ---
-import P1 from "@/assets/Igorek.avif";
-import LetterGlitch from "@/components/features/LetterGlitch";
-import { Image } from "astro:assets";
+import P1 from '@/assets/Igorek.avif'
+import LetterGlitch from '@/components/features/LetterGlitch'
+import { Image } from 'astro:assets'
 ---
 
 <section
-  class="flex relative flex-col xl:flex-row px-spaced gap-16 py-8 lg:py-16 min-h-[80vh] overflow-hidden"
+  class='flex relative flex-col 2xl:flex-row px-spaced gap-16 py-8 lg:py-16 min-h-[40vh] md:min-h-[80vh] overflow-hidden'
 >
   <div
-    id="ellipse"
-    class="absolute w-7/8 h-2/4 bottom-1/3 right-0 -z-0 -rotate-14"
+    id='ellipse'
+    class='absolute w-7/8 h-2/4 bottom-1/3 right-0 -z-0 -rotate-14'
   >
   </div>
   <Image
     src={P1}
-    alt={"Prezez zespołu AWM dający okejkę."}
-    loading={"lazy"}
-    fetchpriority={"high"}
-    class={"absolute size-80 lg:size-110 object-cover intersect:animate-fade-in-scale-index intersect-once translate-y-[30%] lg:translate-y-[5%] left-[70%] lg:left-[50%] translate-x-[-50%] z-10 rounded-br-full rounded-l-full"}
+    alt={'Prezez zespołu AWM dający okejkę.'}
+    loading={'lazy'}
+    fetchpriority={'high'}
+    class={'absolute size-80 lg:size-110 object-cover intersect:animate-fade-in-scale-index intersect-once translate-y-[30%] lg:translate-y-[5%] left-[70%] lg:left-[50%] translate-x-[-50%] z-10 rounded-br-full rounded-l-full'}
     widths={[400, 600, 800, 1000, 1200, 1600, 2000]}
-    sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, (max-width: 800px) 800px, (max-width: 1000px) 1000px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (min-width: 1601px) 2000px"
+    sizes='(max-width: 400px) 400px, (max-width: 600px) 600px, (max-width: 800px) 800px, (max-width: 1000px) 1000px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (min-width: 1601px) 2000px'
   />
-  <div class="flex justify-center w-full h-[292px] place-self-start max-w-4xl">
+  <div class='flex justify-center w-full h-[292px] place-self-start max-w-4xl'>
     <LetterGlitch
       client:load
-      glitchColors={["#029646", "#b3e0c7", "#42f575"]}
+      glitchColors={['#029646', '#b3e0c7', '#42f575']}
       glitchSpeed={33}
       centerVignette={false}
       outerVignette={true}
@@ -32,12 +32,12 @@ import { Image } from "astro:assets";
     />
   </div>
   <div
-    class="flex flex-col intersect:animate-fade-in-scale-index intersect-once shadow-lg shadow-bbrand-green gap-4 text-white z-20 bg-bbrand-green rounded-2xl p-4 h-max text-center max-w-3xl place-self-end"
+    class='flex flex-col intersect:animate-fade-in-scale-index w-full intersect-once shadow-lg shadow-bbrand-green gap-4 text-white z-20 bg-bbrand-green rounded-2xl p-4 h-max text-center max-w-3xl place-self-end'
   >
-    <h2 class="text-bbrand-yellow text-2xl lg:text-4xl font-bold">
+    <h2 class='text-bbrand-yellow text-2xl lg:text-4xl font-bold'>
       Przydane umiejętności jakie można zobyć dołączając do AWM
     </h2>
-    <p class="text-base lg:text-xl font-medium">
+    <p class='text-base lg:text-xl font-medium'>
       Nasi członkowie poza talentem muzycznym rozwijają w zespole umiejętności
       programistyczne. Sami administrują swoją stroną internetową dokonując
       aktualizacji bezpośrednio w kodzie źródłowym. Dołącz do AWM i naucz się
