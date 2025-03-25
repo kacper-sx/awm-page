@@ -1,94 +1,94 @@
 ---
-import BandMember from '@/components/features/BandMember.astro'
-import { bandData } from '@/data/bandData'
+import BandMember from "@/components/features/BandMember.astro";
+import { bandData } from "@/data/bandData";
 ---
 
-<section class='flex flex-col px-spaced relative bg-bbrand-green/5'>
+<section class="flex flex-col px-spaced relative">
   <h2
-    style='text-shadow: #029646 0px 5px 10px;'
-    class='flex font-semibold text-2xl lg:text-7xl relative text-bbrand-green pt-8 lg:pt-16'
+    style="text-shadow: #029646 0px 5px 10px;"
+    class="flex font-semibold text-2xl intersect:animate-fade-in-scale-index intersect-once lg:text-7xl relative text-bbrand-green pt-8 lg:pt-16"
   >
     A oto nasi członkowie
   </h2>
-  <div class='grid w-full relative isolate'>
+  <div class="grid w-full relative isolate">
     {
       bandData.map((member, idx) => {
         return (
           <div
-            data-slot='band-entry'
+            data-slot="band-entry"
             style={{ zIndex: idx * -1 * -1 + 3 }}
-            class='w-full sticky top-[90px] pointer-events-none'
+            class="w-full sticky top-[90px] pointer-events-none"
           >
             <div
               class:list={[
-                'h-screen pointer-events-auto lg:w-1/2 flex items-start group overflow-hidden',
-                idx % 2 === 0 && 'ml-auto lg:pl-8',
+                "h-screen pointer-events-auto lg:w-1/2 flex items-start group overflow-hidden",
+                idx % 2 === 0 && "ml-auto lg:pl-8",
               ]}
             >
               <BandMember {...member} />
             </div>
           </div>
-        )
+        );
       })
     }
   </div>
 </section>
 
 <script>
-  import { dqsAll } from '@/lib/utils'
-  import { animate, scroll } from 'motion'
+  import { dqsAll } from "@/lib/utils";
+  import { animate, scroll } from "motion";
   function main() {
-    const entries = dqsAll('div[data-slot="band-entry"]')
+    const entries = dqsAll('div[data-slot="band-entry"]');
 
     scroll(
       animate(
         entries[0],
         {
           // @ts-expect-error FUCK YOU
-          y: [0, '-100%'],
+          y: [0, "-100%"],
         },
         {
-          easing: 'linear',
+          easing: "linear",
         },
       ),
       {
         target: entries[0].parentElement!,
-        offset: ['25% start', '50% start'],
+        offset: ["25% start", "50% start"],
       },
-    )
+    );
     scroll(
       animate(
         entries[1],
         {
           // @ts-expect-error FUCK YOU
-          y: [0, '-100%'],
+          y: [0, "-100%"],
         },
         {
-          easing: 'linear',
+          easing: "linear",
         },
       ),
       {
         target: entries[1].parentElement!,
-        offset: ['50% start', '75% start'],
+        offset: ["50% start", "75% start"],
       },
-    )
+    );
     scroll(
       animate(
         entries[2],
         {
           // @ts-expect-error FUCK YOU
-          y: [0, '-100%'],
+          y: [0, "-100%"],
         },
         {
-          easing: 'linear',
+          easing: "linear",
         },
       ),
       {
         target: entries[2].parentElement!,
-        offset: ['75% start', '100% start'],
+        offset: ["75% start", "100% start"],
       },
-    )
+    );
   }
-  window.matchMedia('(min-width: 1024px)').addEventListener('change', main)
+  window.matchMedia("(min-width: 1024px)").addEventListener("change", main);
   // document.addEventListener("astro:page-load", main);
 </script>

@@ -1,0 +1,64 @@
+---
+import niceImg from "@/assets/band4.avif";
+
+import { Image } from "astro:assets";
+import { chunk } from "remeda";
+
+const AwmList = [
+  "Zaplanuj wydarzenie",
+  "Masz pomysł na wydażenie z muzyką na żywo? Świetny pomysł. Zespół AWM jest w stanie zagrać na różnych wydażeniach muzycznych. Daj nam znać jakie masz plany i postaramy się szybko dać odpowiedź!",
+  "Znajdź dobrego nagłośnieniowca",
+  "Zespół jest bardzo liczny a jego opinka nie jest najłatwiejsza. Na początek musisz zorganizować dobrą firmę nagłośnieniową. Wyślemy pełny opis specyfiki nagłośnienia zespołu do wglądu. Jeśli nikogo nie znajdziesz to mamy swojego sprawdzonego męczennika.",
+  // "Darmowa wycena!!!",
+  "Zorganizuj trochę światełek",
+  "Fajnie by było gdyby za nami coś fajnie świeciło. Dobry świetlik będzie naprawdę mile widziany. Tutaj tak samo, jeśli nie masz nikogo sprawdzonego to mamy swojego wariata od światełek.",
+  "Dogadaj formalności z rektorem",
+  "W przypadku, gdy koncert ma się odbyć w godzinach zajęć, musisz dogadać sprawę z rektorem, abyśmy uzyskali stosowne zwolnienia. Kiedy w grę wchodzi jakieś wynagrodzenie inne niż kebab, również wszystko w papierach musi się gadzać.",
+  "Obowiązkowa próba nagłośnienia",
+  "Liczebność zespołu powoduje, że wymagamy przynajmniej 2h próby nagłośnieniowej. Zdajemy sobie sprawę, że może to być utrudnienie więc postaramy dostosować się do grafiku prób, tak żeby wszyscy byli szczęśliwi i zadowoleni.",
+  "Nie pogardzimy afterkiem",
+  "Studenci jak to studenci umieją się bawić. Każda propozycja aferu spotka się ze stanowczą aprobatą i uśmiechem na twarzy. Każdej póbie intergracji pokoncertowej odpowiadamy 'JAK NAJBARDZIEJ, JESZCZE JAK!'",
+];
+---
+
+<section
+  class="spaced lg:space-y-12 space-y-6 px-spaced flex flex-col py-8 lg:py-16"
+>
+  <h2
+    class="font-extrabold text-2xl lg:text-4xl intersect:animate-fade-in-scale-index intersect-once"
+  >
+    Jak wygląda współpraca z zespołem AWM?
+  </h2>
+  <div
+    class="relative flex flex-col lg:flex-row gap-12 *:flex-1 ml-4 intersect:animate-fade-in-scale-index intersect-once"
+  >
+    <ol class="flex flex-col pl-8 gap-6 lg:gap-12">
+      {
+        chunk(AwmList, 2).map(([title, p], i) => (
+          <li
+            class={`relative space-y-3 rounded-2xl px-6 py-4 ${i % 2 === 0 ? "rotate-1 bg-gradient-to-l from-bg-bbrand-yellow/70 to-bbrand-yellow" : "-rotate-1 bg-gradient-to-l from-bg-bbrand-yellow to-bbrand-yellow/30"}`}
+          >
+            <div class="absolute font-extrabold -z-10 top-3 -left-12 text-5xl text-bbrand-green">
+              {i + 1}
+            </div>
+            <h3 class="font-extrabold text-fg-1 text-xl lg:text-2xl">
+              {title}
+            </h3>
+            <p class="text-fg-1 text-base lg:text-lg">{p}</p>
+          </li>
+        ))
+      }
+    </ol>
+    <div class="sticky top-0 overflow-clip max-h-svh">
+      <Image
+        src={niceImg}
+        class="sticky top-[90px] min-h-0 h-min w-full object-cover rounded-2xl intersect:animate-fade-in-scale-index intersect-once"
+        alt="Domy energooszczędne cena"
+        widths={[400, 800, 1200]}
+        sizes="(max-width: 800px) 400px, (max-width: 1200px) 800px, 1200px"
+        format="webp"
+        quality={80}
+      />
+    </div>
+  </div>
+</section>

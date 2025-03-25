@@ -1,0 +1,104 @@
+---
+import { Icon } from "astro-icon/components";
+const pathname = Astro.url.pathname;
+---
+
+<section
+  class="flex justify-center items-center relative overflow-hidden px-spaced xl:py-24 py-8"
+>
+  <div
+    class="flex flex-col intersect:animate-fade-in-scale-index intersect-once shadow-md *:z-10 overflow-hidden relative max-w-5xl w-full gap-8 items-center justify-center px-3 py-8 bg-radial from-bbrand-yellow to-75% to-bbrand-green/30 rounded-2xl"
+  >
+    <Icon
+      name="lucide:guitar"
+      class="absolute h-full w-auto -z-10 text-bbrand-green/30 left-0 top-0"
+    />
+    <div class="flex flex-col w-full">
+      <p class={"text-2xl font-bold lg:text-4xl text-center"}>
+        Dołącz do zespołu!
+      </p>
+    </div>
+    <div class="flex flex-col gap-8 w-full items-center justify-center">
+      <p
+        class={"w-full text-base lg:text-xl font-medium text-balance text-center"}
+      >
+        Umiesz grać na jakimś instrumencie, albo ładnie śpiewasz? Zapraszamy na
+        próbę! Panuje u nas świetna atmosfera i każdy jest mile widziany.
+      </p>
+      <a
+        class="rounded-full flex gap-4 items-center btn btn-white btn-animate hover:ring-2 ring-offset-4 ring-bbrand-green transition-all bg-bbrand-green py-4 px-5"
+        href="/kontakt"
+        >Skontakuj się <Icon
+          name="lucide:phone"
+          class={"flex size-6 text-bbrand-yellow"}
+        />
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .btn:link,
+  .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-flex;
+    border-radius: 100px;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-white {
+    background-color: var(--color-bbrand-green);
+  }
+
+  .btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  .btn-white::after {
+    background-color: var(--color-bbrand-green);
+  }
+
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+
+  .btn-animated {
+    animation: moveInBottom 5s ease-out;
+    animation-fill-mode: backwards;
+  }
+
+  @keyframes moveInBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+</style>

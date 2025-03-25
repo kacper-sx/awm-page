@@ -2,8 +2,8 @@
 import { defineConfig } from 'astro/config';
 
 import react from '@astrojs/react';
-import icon from "astro-icon";
 import tailwindcss from '@tailwindcss/vite';
+import icon from "astro-icon";
 
 import mdx from "@astrojs/mdx";
 
@@ -16,6 +16,7 @@ export default defineConfig({
           "arrow-up-right",
           "chevron-right",
           "phone",
+          "truck",
           "menu",
           "scroll",
           "mail",
