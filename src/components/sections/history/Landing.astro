@@ -7,7 +7,7 @@ import { Image } from 'astro:assets'
 
 <section
   style={`background-image: url(${background.src})`}
-  class='flex flex-col relative xl:flex-row gap-8 xl:gap-16 w-full pb-16 md:h-screen bg-right lg:bg-center bg-cover px-spaced pt-24 xl:pt-36 items-center justify-center overflow-hidden'
+  class='flex flex-col relative xl:flex-row gap-8 xl:gap-16 w-full pb-16 xl:h-screen bg-right lg:bg-center bg-cover px-spaced pt-24 xl:pt-36 items-center justify-center overflow-hidden'
 >
   <div
     id='ellipse'
@@ -16,20 +16,20 @@ import { Image } from 'astro:assets'
   </div>
 
   <div
-    class='space-y-8 z-10 intersect:animate-fade-in-scale-index intersect-once place-self-end relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent'
+    class='space-y-8 z-10 intersect:animate-fade-in-scale-index intersect-once place-self-center 2xl:place-self-end relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px xl:before:mx-auto xl:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent'
   >
     <!-- Item #1 -->
     <div
-      class='relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active'
+      class='relative flex items-center justify-between xl:justify-normal xl:odd:flex-row-reverse group is-active'
     >
       <!-- Icon -->
       <div
-        class='flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2'
+        class='flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 xl:order-1 xl:group-odd:-translate-x-1/2 xl:group-even:translate-x-1/2'
       >
       </div>
       <!-- Card -->
       <div
-        class='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded border border-slate-200 shadow'
+        class='w-[calc(100%-4rem)] xl:w-[calc(50%-2.5rem)] bg-white p-4 rounded border border-slate-200 shadow'
       >
         <div class='flex items-center justify-between space-x-2 mb-1'>
           <div class='font-bold text-slate-900'>Order Placed</div>
@@ -45,11 +45,11 @@ import { Image } from 'astro:assets'
 
     <!-- Item #2 -->
     <div
-      class='relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active'
+      class='relative flex items-center justify-between xl:justify-normal xl:odd:flex-row-reverse group is-active'
     >
       <!-- Icon -->
       <div
-        class='flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2'
+        class='flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 xl:order-1 xl:group-odd:-translate-x-1/2 xl:group-even:translate-x-1/2'
       >
         <svg
           class='fill-current'
@@ -65,7 +65,7 @@ import { Image } from 'astro:assets'
       </div>
       <!-- Card -->
       <div
-        class='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded border border-slate-200 shadow'
+        class='w-[calc(100%-4rem)] xl:w-[calc(50%-2.5rem)] bg-white p-4 rounded border border-slate-200 shadow'
       >
         <div class='flex items-center justify-between space-x-2 mb-1'>
           <div class='font-bold text-slate-900'>Order Shipped</div>
@@ -81,11 +81,11 @@ import { Image } from 'astro:assets'
 
     <!-- Item #3 -->
     <div
-      class='relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active'
+      class='relative flex items-center justify-between xl:justify-normal xl:odd:flex-row-reverse group is-active'
     >
       <!-- Icon -->
       <div
-        class='flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2'
+        class='flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 xl:order-1 xl:group-odd:-translate-x-1/2 xl:group-even:translate-x-1/2'
       >
         <svg
           class='fill-current'
@@ -101,7 +101,7 @@ import { Image } from 'astro:assets'
       </div>
       <!-- Card -->
       <div
-        class='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded border border-slate-200 shadow'
+        class='w-[calc(100%-4rem)] xl:w-[calc(50%-2.5rem)] bg-white p-4 rounded border border-slate-200 shadow'
       >
         <div class='flex items-center justify-between space-x-2 mb-1'>
           <div class='font-bold text-slate-900'>In Transit</div>
@@ -117,11 +117,11 @@ import { Image } from 'astro:assets'
 
     <!-- Item #4 -->
     <div
-      class='relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active'
+      class='relative flex items-center justify-between xl:justify-normal xl:odd:flex-row-reverse group is-active'
     >
       <!-- Icon -->
       <div
-        class='flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2'
+        class='flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 xl:order-1 xl:group-odd:-translate-x-1/2 xl:group-even:translate-x-1/2'
       >
         <svg
           class='fill-current'
@@ -137,7 +137,7 @@ import { Image } from 'astro:assets'
       </div>
       <!-- Card -->
       <div
-        class='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded border border-slate-200 shadow'
+        class='w-[calc(100%-4rem)] xl:w-[calc(50%-2.5rem)] bg-white p-4 rounded border border-slate-200 shadow'
       >
         <div class='flex items-center justify-between space-x-2 mb-1'>
           <div class='font-bold text-slate-900'>Out of Delivery</div>
@@ -153,11 +153,11 @@ import { Image } from 'astro:assets'
 
     <!-- Item #5 -->
     <div
-      class='relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group'
+      class='relative flex items-center justify-between xl:justify-normal xl:odd:flex-row-reverse group'
     >
       <!-- Icon -->
       <div
-        class='flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2'
+        class='flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 xl:order-1 xl:group-odd:-translate-x-1/2 xl:group-even:translate-x-1/2'
       >
         <svg
           class='fill-current'
@@ -172,7 +172,7 @@ import { Image } from 'astro:assets'
       </div>
       <!-- Card -->
       <div
-        class='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded border border-slate-200 shadow'
+        class='w-[calc(100%-4rem)] xl:w-[calc(50%-2.5rem)] bg-white p-4 rounded border border-slate-200 shadow'
       >
         <div class='flex items-center justify-between space-x-2 mb-1'>
           <div class='font-bold text-slate-900'>Delivered</div>
