@@ -20,7 +20,7 @@ const { breadcrumbs } = Astro.props
 />
 
 <nav class={cn('not-prose')}>
-  <ul class='flex gap-1.5 text-sm text-foreground'>
+  <ul class='flex gap-1.5 text-base text-foreground'>
     {
       breadcrumbs.map(({ href, children }, idx, { length }) => (
         <Fragment>

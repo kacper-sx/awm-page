@@ -1,0 +1,101 @@
+---
+import { Image } from 'astro:assets'
+import awm from '@/assets/awm.avif'
+import background from '@/assets/background.svg'
+import { Icon } from 'astro-icon/components'
+import Breadcrumbs from '@/components/features/Breadcrumbs.astro'
+---
+
+<section
+  style={`background-image: url(${background.src})`}
+  class='flex flex-col relative gap-8 bg-cover lg:bg-center lg:gap-12 px-spaced min-h-screen justify-center items-center overflow-hidden text-center pb-8 lg:pb-16 pt-16 lg:pt-30'
+>
+  <a
+    target='_blank'
+    rel='noopener'
+    href='https://www.instagram.com/_a.w.m._a.w.f_/'
+  >
+    <Icon
+      name='sociale'
+      class={'absolute hidden z-10 lg:block top-36 left-24 size-48 transition-all hover:scale-110 duration-500 animate-spin-slow'}
+    />
+  </a>
+  <div
+    id='ellipse'
+    class='absolute w-full h-2/4 bottom-2/4 lg:bottom-1/4 right-0 -z-0 rotate-12'
+  >
+  </div>
+  <div
+    class='flex flex-col gap-8 lg:gap-10 items-center justify-center z-10 w-full intersect:animate-fade-in-scale-index intersect-once'
+  >
+    <Breadcrumbs
+      breadcrumbs={[
+        { href: '/', children: 'AWM' },
+        { href: '/kontakt', children: 'Kontakt' },
+      ]}
+    />
+    <h1
+      style='text-shadow: #029646 0px 5px 10px;'
+      class='font-bold text-center text-3xl lg:text-6xl text-bbrand-green'
+    >
+      Kontakt do zespołu AWM
+    </h1>
+    <div class='flex flex-col lg:flex-row gap-8'>
+      <address
+        class='not-italic -rotate-2 flex flex-col gap-4 shadow-bbrand-green text-xl bg-bbrand-green shadow-lg font-semibold xl:text-3xl text-bbrand-100 bg-bbrand-50 rounded-2xl p-4'
+      >
+        <span
+          style='text-shadow: #faf903 0px 5px 10px;'
+          class='text-bbrand-yellow'>Prezes Zespołu: Igor Krupa</span
+        >
+
+        <span> telefon: +48600225821</span>
+      </address>
+      <address
+        class='not-italic flex rotate-2 flex-col gap-4 text-xl shadow-bbrand-green bg-bbrand-green shadow-lg font-semibold xl:text-3xl text-bbrand-100 bg-bbrand-50 rounded-2xl p-4'
+      >
+        <span
+          style='text-shadow: #faf903 0px 5px 10px;'
+          class='text-bbrand-yellow'>Opiekun: mgr Aleksandra Bigielis</span
+        >
+
+        <span> telefon: +48781067557</span>
+      </address>
+    </div>
+    <div
+      class='flex flex-col gap-4 shadow-bbrand-green text-lg bg-gradient-to-b from-bbrand-green to-90% to-bbrand-yellow z-20 shadow-lg font-semibold xl:text-3xl rounded-br-2xl rounded-tl-2xl p-4'
+    >
+      <span
+        style='text-shadow: #faf903 0px 5px 10px;'
+        class='text-bbrand-yellow'>PRÓBY</span
+      >
+      <p class='flex flex-col gap-2'>
+        <span>Kiedy - środa, czwartek 18:00-21.37</span>
+        <span>Gdzie - Piwnica w Domu Studenta AGAT</span>
+      </p>
+    </div>
+    <iframe
+      src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2454.5122808622814!2d23.103209976988722!3d52.03398217209867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47219146eaabcddd%3A0x35f046eaeef14969!2sDom%20Studenta%20AWF%20%22Agat%22!5e0!3m2!1spl!2spl!4v1742936858880!5m2!1spl!2spl'
+      class='w-full z-10 max-w-7xl min-h-[20vh]'
+      style='border:0;'
+      title="AWM's office"
+      allowfullscreen=''
+      loading='eager'
+      referrerpolicy='no-referrer-when-downgrade'></iframe>
+  </div>
+</section>
+<style>
+  #ellipse {
+    background: conic-gradient(
+      from 187.31deg at 53.06% 26.16%,
+      var(--color-bbrand-yellow) -20.13deg,
+
+      rgba(255, 33, 246, 0) 122.88deg,
+      rgba(125, 35, 240, 0) 273.47deg,
+      var(--color-bbrand-yellow) 229.87deg,
+      var(--color-bbrand-yellow) 375.67deg
+    );
+    filter: blur(80px);
+    transform: matrix(-1, 0, 0, 0, 0);
+  }
+</style>
