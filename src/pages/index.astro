@@ -1,18 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Landing from '@/components/sections/homepage/Landing.astro'
-import MovieSection from '@/components/sections/homepage/MovieSection.astro'
+import CTA from "@/components/CTA.astro";
+import Landing from "@/components/sections/homepage/Landing.astro";
+import Layout from "../layouts/Layout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout
-  title='Akademia Wychowania Muzycznego - AWF Biała Podlaska'
-  description='Jesteśmy Akademia Wychowania Muzycznego - grupa uzdolnionych muzycznie studentów i studentek z AWF w Białej Podlaskiej.'
-  canonical='/'
-  keywords='Akademia Wychowania Muzycznego'
+  title="Akademia Wychowania Muzycznego - AWF Biała Podlaska"
+  description="Jesteśmy Akademia Wychowania Muzycznego - grupa uzdolnionych muzycznie studentów i studentek z AWF w Białej Podlaskiej."
+  canonical="/"
+  keywords="Akademia Wychowania Muzycznego"
 >
   <Landing />
-  <MovieSection />
+  <CTA />
 </Layout>
