@@ -1,0 +1,30 @@
+---
+import { filterAllPosts, sortPostsByDate } from "@/content.config";
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const blogPosts = (await getCollection("aktualnosci", filterAllPosts)).sort(
+  sortPostsByDate,
+);
+---
+
+<Layout
+  title="Aktualnosci"
+  description="Jesteśmy Akademia Wychowania Muzycznego - grupa uzdolnionych muzycznie studentów i studentek z AWF w Białej Podlaskiej."
+  canonical="https://awm-awf.pl/"
+  keywords="Akademia Wychowania Muzycznego"
+>
+  <main class="prose mx-auto p-2">
+    <div class="post-list grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {
+        blogPosts.map((post) => (
+          <a href={`/aktualnosci/${post.id}`} class="relative">
+            <div class="absolute inset-0 flex items-center justify-center rounded-md p-1 text-3xl text-white bg-slate-800/10 hover:bg-slate-800/50 transition-all duration-200">
+              {post.data.title}
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </main>
+</Layout>
