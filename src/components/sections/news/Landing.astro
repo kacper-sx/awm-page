@@ -1,0 +1,69 @@
+---
+import Breadcrumbs from "@/components/features/Breadcrumbs.astro";
+import NewsCard from "@/components/features/NewsCard.astro";
+import { newsData } from "@/data/newsData";
+---
+
+<section
+  class="flex flex-col bg-radial from-bbrand-yellow to-95% to-bbrand-green relative gap-8 bg-cover lg:bg-center lg:gap-12 px-spaced min-h-screen justify-center items-center overflow-hidden text-center pb-8 lg:pb-16 pt-16 lg:pt-30"
+>
+  <div
+    class="flex flex-col gap-8 z-10 lg:gap-10 items-center justify-center w-full intersect:animate-fade-in-scale-index intersect-once"
+  >
+    <Breadcrumbs
+      breadcrumbs={[
+        { href: "/", children: "AWM" },
+        { href: "/aktualnosci", children: "Aktualności" },
+      ]}
+    />
+    <h1
+      style="text-shadow: #029646 0px 5px 10px;"
+      class="font-bold text-center text-3xl lg:text-6xl"
+    >
+      Aktualności
+    </h1>
+    <div class="flex flex-wrap justify-center gap-8">
+      {
+        newsData.map((news) => (
+          <NewsCard
+            title={news.title}
+            description={news.description}
+            img={news.image}
+            link={news.link}
+            alt={news.alt}
+            date={news.date}
+            author={news.author}
+          />
+        ))
+      }
+    </div>
+    <style>
+      #ellipse {
+        background: conic-gradient(
+          from 187.31deg at 53.06% 26.16%,
+          var(--color-bbrand-yellow) -20.13deg,
+
+          rgba(255, 33, 246, 0) 122.88deg,
+          rgba(125, 35, 240, 0) 273.47deg,
+          var(--color-bbrand-yellow) 229.87deg,
+          var(--color-bbrand-yellow) 375.67deg
+        );
+        filter: blur(80px);
+        transform: matrix(-1, 0, 0, 0, 0);
+      }
+      #ellipse2 {
+        background: conic-gradient(
+          from 187.31deg at 53.06% 26.16%,
+          var(--color-bbrand-green) -20.13deg,
+
+          rgba(255, 33, 246, 0) 122.88deg,
+          rgba(125, 35, 240, 0) 273.47deg,
+          var(--color-bbrand-green) 229.87deg,
+          var(--color-bbrand-green) 375.67deg
+        );
+        filter: blur(80px);
+        transform: matrix(-1, 0, 0, 0, 0);
+      }
+    </style>
+  </div>
+</section>

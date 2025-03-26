@@ -1,0 +1,35 @@
+---
+import { Image, type LocalImageProps } from "astro:assets";
+
+export interface Props {
+  title: string;
+  img: LocalImageProps["src"];
+  description: string;
+  alt: string;
+  date: string;
+  author: string;
+  link: string;
+}
+
+const { title, img, description, date, author, link, alt } = Astro.props;
+---
+
+<div class="flex flex-col items-center rounded-t-2xl w-full md:max-w-[400px]">
+  <Image
+    class={"max-h-[400px] object-cover rounded-t-2xl"}
+    src={img}
+    alt={alt}
+    widths={[400, 600, 800, 1000, 1200, 1600, 2000]}
+  />
+  <a
+    href={link}
+    class="flex flex-col gap-2 items-center bg-white/30 rounded-b-2xl p-4"
+  >
+    <h2 class="text-xl font-semibold text-bbrand-yellow">
+      {title}
+    </h2>
+    <p class="flex text-base lg:text-xl font-extrabold uppercase">{author}</p>
+    <p class="flex text-base lg:text-xl text-center">{description}</p>
+    <p class="flex text-sm lg:text-base text-gray-600">{date}</p>
+  </a>
+</div>
