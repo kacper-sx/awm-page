@@ -5,7 +5,7 @@ import { newsData } from "@/data/newsData";
 ---
 
 <section
-  class="flex flex-col bg-radial from-bbrand-yellow to-95% to-bbrand-green relative gap-8 bg-cover lg:bg-center lg:gap-12 px-spaced min-h-screen justify-center items-center overflow-hidden text-center pb-8 lg:pb-16 pt-16 lg:pt-30"
+  class="flex flex-col relative gap-8 bg-cover lg:bg-center lg:gap-12 px-spaced min-h-screen justify-center items-center overflow-hidden text-center pb-8 lg:pb-16 pt-16 lg:pt-30"
 >
   <div
     class="flex flex-col gap-8 z-10 lg:gap-10 items-center justify-center w-full intersect:animate-fade-in-scale-index intersect-once"
@@ -16,12 +16,7 @@ import { newsData } from "@/data/newsData";
         { href: "/aktualnosci", children: "Aktualności" },
       ]}
     />
-    <h1
-      style="text-shadow: #029646 0px 5px 10px;"
-      class="font-bold text-center text-3xl lg:text-6xl"
-    >
-      Aktualności
-    </h1>
+    <h1 class="font-bold text-center text-3xl lg:text-6xl">Aktualności</h1>
     <div class="flex flex-wrap justify-center gap-8">
       {
         newsData.map((news) => (
